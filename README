@@ -1,0 +1,26 @@
+# Appnium<br>
+1.连接真机Nexus 5 —— 并转到调试模式<br>
+
+    选择 设置-关于手机-版本号，点了没用？狂点若干次，就打开usb调试了。
+    然后返回上级菜单，在 关于手机 的上方，就出现了 开发者选项。
+    选项里面最好取消 通过USB验证应用 这个选项。
+    
+2.安装Android驱动
+今天安装驱动一直出现“数据无效”的问题，最后各种百度才找到解决办法
+    
+    1.打开搜索栏，输入“services.msc”，回车进入服务界面。反正进入服务就行了
+    2.找到“Device Install Service”和“Device Setup Manager”，启动。
+    3.再次安装驱动，成功。
+    
+3.Python + appium环境搭建<br>
+环境搭建：
+https://blog.csdn.net/qq_31261509/article/details/74452733https://blog.csdn.net/qq_31261509/article/details/74452733
+进入sdk中文件夹下面的tools文件夹中，并且打开bin目录，能够看到 uiautomatorviewer.bat，双击即可运行<br>
+将手机设置成调试模式，并且在cmd中输入adb devices回车<br>
+    
+    C:\Users\zjn>adb devices
+    List of devices attached
+    03c8c8662518f4aa        device
+    # 获取安卓版本号
+    C:\Users\zjn>adb shell getprop ro.build.version.release
+    6.0.1
